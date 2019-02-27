@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Assignment4" />
+		<Option pch_mode="0" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Assignment4" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Assignment4" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="`wx-config --cflags`" />
+			<Add option="-Winvalid-pch" />
+			<Add option="-include wx_pch.h" />
+			<Add option="-DWX_PRECOMP" />
+			<Add option="-Wall" />
+		</Compiler>
+		<Linker>
+			<Add option="`wx-config --libs`" />
+		</Linker>
+		<Unit filename="Assignment4App.cpp" />
+		<Unit filename="Assignment4App.h" />
+		<Unit filename="Assignment4Main.cpp" />
+		<Unit filename="Assignment4Main.h" />
+		<Unit filename="wx_pch.h">
+			<Option compile="1" />
+			<Option weight="0" />
+		</Unit>
+		<Unit filename="wxsmith/Assignment4frame.wxs" />
+		<Extensions>
+			<envvars />
+			<code_completion />
+			<debugger />
+			<lib_finder disable_auto="1" />
+			<wxsmith version="1">
+				<gui name="wxWidgets" src="Assignment4App.cpp" main="Assignment4Frame" init_handlers="necessary" language="CPP" />
+				<resources>
+					<wxFrame wxs="wxsmith/Assignment4frame.wxs" src="Assignment4Main.cpp" hdr="Assignment4Main.h" fwddecl="0" i18n="1" name="Assignment4Frame" language="CPP" />
+				</resources>
+			</wxsmith>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
