@@ -183,18 +183,20 @@ void Tic_Tac_ToeFrame::OnPaint(wxPaintEvent& event)
 
 void Tic_Tac_ToeFrame::OnPanel1LeftDClick(wxMouseEvent& event)
 {
-    wxClientDC dc(Panel1);
-    dc.SetPen(wxPen(wxColour(0,0,0),3));
-    dc.SetBrush(*wxBLACK_BRUSH);
+    if(!TicTacToe::TicTacToe->GameOver){
 
-    TicTacToe::TicTacToe->Click(event.GetPosition(), dc);
-    if(TicTacToe::TicTacToe->numTaken >= 5){
-        TicTacToe::winner =  TicTacToe::TicTacToe->CheckWin();
+        wxClientDC dc(Panel1);
+        dc.SetPen(wxPen(wxColour(0,0,0),3));
+        dc.SetBrush(*wxBLACK_BRUSH);
+
+        TicTacToe::TicTacToe->Click(event.GetPosition(), dc);
+        if(TicTacToe::TicTacToe->numTaken >= 5){
+            TicTacToe::winner =  TicTacToe::TicTacToe->CheckWin();
+        }
+        if(TicTacToe::winner == 1){
+            TextCtrl1->SetValue(_("Player 1 Wins"));
+        }else if(TicTacToe::winner == 2){
+            TextCtrl1->SetValue(_("Player 2 Wins"));
+        }
     }
-    if(TicTacToe::winner == 1){
-        TextCtrl1->SetValue(_("Player 1 Wins"));
-    }else if(TicTacToe::winner == 2){
-        TextCtrl1->SetValue(_("Player 2 Wins"));
-    }
-    //Refresh();
 }
