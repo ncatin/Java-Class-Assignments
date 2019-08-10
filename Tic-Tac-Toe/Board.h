@@ -7,6 +7,7 @@ class Board{
 public:
     Board_Piece* BoardArr[9];
     int player, numTaken;
+    bool GameOver;
 
     Board(){
             BoardArr[0] = new Board_Piece(0,0,100,100);
@@ -21,34 +22,83 @@ public:
 
             player = 1;
             numTaken = 0;
+            GameOver = false;
 
     }
 
     int CheckWin(){
         if(BoardArr[0]->XO == BoardArr[1]->XO && BoardArr[1]->XO == BoardArr[2]->XO){
-            if(BoardArr[0]->XO == 'X') return 1;
-            else if(BoardArr[0]->XO == 'O') return 2;
+            if(BoardArr[0]->XO == 'X'){
+              GameOver = true;
+              return 1;
+            }
+            else if(BoardArr[0]->XO == 'O'){
+              GameOver = true;
+              return 2;
+            }
         }else if(BoardArr[3]->XO == BoardArr[4]->XO && BoardArr[4]->XO == BoardArr[5]->XO){
-            if(BoardArr[3]->XO == 'X') return 1;
-            else if(BoardArr[3]->XO == 'O') return 2;
+            if(BoardArr[3]->XO == 'X'){
+                GameOver = true;
+                return 1;
+            }
+            else if(BoardArr[3]->XO == 'O'){
+                GameOver = true;
+                return 2;
+            }
         }else if(BoardArr[6]->XO == BoardArr[7]->XO && BoardArr[7]->XO == BoardArr[8]->XO){
-            if(BoardArr[6]->XO == 'X') return 1;
-            else if(BoardArr[6]->XO == 'O') return 2;
+            if(BoardArr[6]->XO == 'X'){
+                GameOver = true;
+                return 1;
+            }
+            else if(BoardArr[6]->XO == 'O'){
+                GameOver = true;
+                return 2;
+            }
         }else if(BoardArr[0]->XO == BoardArr[3]->XO && BoardArr[3]->XO == BoardArr[6]->XO){
-            if(BoardArr[0]->XO == 'X') return 1;
-            else if(BoardArr[0]->XO == 'O') return 2;
+            if(BoardArr[0]->XO == 'X'){
+                GameOver = true;
+                return 1;
+            }
+            else if(BoardArr[0]->XO == 'O'){
+                GameOver = true;
+                return 2;
+            }
         }else if(BoardArr[1]->XO == BoardArr[4]->XO && BoardArr[4]->XO == BoardArr[7]->XO){
-            if(BoardArr[1]->XO == 'X') return 1;
-            else if(BoardArr[1]->XO == 'O') return 2;
+            if(BoardArr[1]->XO == 'X'){
+                GameOver = true;
+                return 1;
+            }
+            else if(BoardArr[1]->XO == 'O'){
+                GameOver = true;
+                return 2;
+            }
         }else if(BoardArr[2]->XO == BoardArr[5]->XO && BoardArr[5]->XO == BoardArr[8]->XO){
-            if(BoardArr[2]->XO == 'X') return 1;
-            else if(BoardArr[2]->XO == 'O') return 2;
+            if(BoardArr[2]->XO == 'X'){
+                GameOver = true;
+                return 1;
+            }
+            else if(BoardArr[2]->XO == 'O'){
+                GameOver = true;
+                return 2;
+            }
         }else if(BoardArr[0]->XO == BoardArr[4]->XO && BoardArr[4]->XO == BoardArr[8]->XO){
-            if(BoardArr[0]->XO == 'X') return 1;
-            else if(BoardArr[0]->XO == 'O') return 2;
+            if(BoardArr[0]->XO == 'X'){
+                GameOver = true;
+                return 1;
+            }
+            else if(BoardArr[0]->XO == 'O'){
+                GameOver = true;
+                return 2;
+            }
         }else if(BoardArr[2]->XO == BoardArr[4]->XO && BoardArr[4]->XO == BoardArr[6]->XO){
-            if(BoardArr[2]->XO == 'X') return 1;
-            else if(BoardArr[2]->XO == 'O')return 2;
+            if(BoardArr[2]->XO == 'X'){
+                GameOver = true;
+                return 1;
+            }
+            else if(BoardArr[2]->XO == 'O'){
+                GameOver = true;
+                return 2;
+            }
         }
     }
 
